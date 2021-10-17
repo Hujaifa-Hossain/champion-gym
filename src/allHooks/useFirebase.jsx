@@ -5,6 +5,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   onAuthStateChanged,
+  createUserWithEmailAndPassword,
 } from "firebase/auth";
 
 initializeAuthentication();
@@ -13,6 +14,27 @@ const auth = getAuth();
 const useFirebase = () => {
   const [user, setUser] = useState();
   const [error, setError] = useState();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleRegistration = (e) => {
+    e.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        console.log(userCredential.user);
+        setUser(userCredential.user); 
+      })
+      .catch((error) => {
+        setError(error.message)
+      });
+  };
 
   const GoogleProvider = new GoogleAuthProvider();
 
@@ -37,6 +59,9 @@ const useFirebase = () => {
     user,
     error,
     SignInUsingGoogle,
+    handleRegistration,
+    handleEmail,
+    handlePassword
   };
 };
 

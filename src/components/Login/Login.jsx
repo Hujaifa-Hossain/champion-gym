@@ -1,15 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import useFirebase from "../../allHooks/useFirebase";
+import useAuth from "../../allHooks/useAuth";
 
 const Login = () => {
-  const { SignInUsingGoogle } = useFirebase();
-  const handleEmail = (e) => {
-    console.log(e.target.value);
-  };
-  const handlePassword = (e) => {
-    console.log(e.target.value);
-  };
+  const { SignInUsingGoogle } = useAuth();
   return (
     <div>
       <div className="container overflow-hidden">
@@ -34,7 +28,6 @@ const Login = () => {
                 </label>
                 <div className="col-sm-9">
                   <input
-                    onBlur={handleEmail}
                     type="text"
                     className="form-control"
                     id="staticEmail"
@@ -52,7 +45,6 @@ const Login = () => {
                 </label>
                 <div className="col-sm-9">
                   <input
-                    onBlur={handlePassword}
                     type="password"
                     className="form-control"
                     id="inputPassword"
@@ -60,7 +52,7 @@ const Login = () => {
                     required
                   />
                 </div>
-                <button className="w-50 mx-auto my-3" type="submit">
+                <button className="w-50 mx-auto my-3 btn btn-success" type="submit">
                   Log in
                 </button>
               </div>
@@ -72,7 +64,7 @@ const Login = () => {
                   <Link to="/register">create an account</Link>
                 </small>
               </p>
-              <button onClick={SignInUsingGoogle}>google</button>
+              <button className="btn btn-dark" onClick={SignInUsingGoogle}>Sign in with google</button>
             </div>
           </div>
         </div>
