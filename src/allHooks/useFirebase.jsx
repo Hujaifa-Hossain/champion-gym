@@ -6,6 +6,7 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
   createUserWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
 
 initializeAuthentication();
@@ -55,13 +56,23 @@ const useFirebase = () => {
       }
     });
   }, [error]);
+  const logOut = () => {
+    signOut(auth)
+      .then(() => {
+        setUser()
+      })
+      .catch((error) => {
+        setError(error.message)
+      });
+  };
   return {
     user,
     error,
     SignInUsingGoogle,
     handleRegistration,
     handleEmail,
-    handlePassword
+    handlePassword,
+    logOut,
   };
 };
 

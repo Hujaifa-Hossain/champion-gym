@@ -1,10 +1,10 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import AllService from '../AllService/AllService';
 
 const Home = () => {
   return (
     <div>
-      <FontAwesomeIcon icon={["fas", 'coffee']} />
+      <AllService></AllService>
     </div>
   );
 };

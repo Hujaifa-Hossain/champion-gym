@@ -9,6 +9,8 @@ import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Registration from './components/Registration/Registration';
 import Footer from './components/Footer/Footer';
+import AllService from './components/AllService/AllService';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -23,17 +25,20 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route path="/about">
+            <PrivateRoute path="/about">
               <About></About>
-            </Route>
-            <Route path="/contact">
+            </PrivateRoute>
+            <PrivateRoute path="/contact">
               <Contact></Contact>
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login></Login>
             </Route>
             <Route path="/register">
               <Registration></Registration>
+            </Route>
+            <Route path="/services">
+              <AllService></AllService>
             </Route>
             <Route path="*">
               <NotFound></NotFound>

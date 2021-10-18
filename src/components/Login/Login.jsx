@@ -12,7 +12,7 @@ const Login = () => {
             <div>
               <img
                 className="img-fluid"
-                src="https://image.freepik.com/free-vector/access-control-system-abstract-concept_335657-3180.jpg"
+                src="https://image.freepik.com/free-vector/sign-concept-illustration_114360-5267.jpg"
                 alt=""
               />
             </div>
@@ -52,7 +52,7 @@ const Login = () => {
                     required
                   />
                 </div>
-                <button className="w-50 mx-auto my-3 btn btn-success" type="submit">
+                <button className="w-50 mx-auto my-3 btn btn-dark" type="submit">
                   Log in
                 </button>
               </div>
@@ -64,7 +64,9 @@ const Login = () => {
                   <Link to="/register">create an account</Link>
                 </small>
               </p>
-              <button className="btn btn-dark" onClick={SignInUsingGoogle}>Sign in with google</button>
+              <button className="btn btn-dark" onClick={SignInUsingGoogle}>
+                <img src="https://image.flaticon.com/icons/png/512/281/281764.png" width="30px" className="m-1 float-start" alt="" />
+                 Sign in with google</button>
             </div>
           </div>
         </div>

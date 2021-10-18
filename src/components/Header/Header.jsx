@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../allHooks/useAuth';
 
 const Header = () => {
+  const {logOut} = useAuth();
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light">
@@ -10,9 +12,9 @@ const Header = () => {
             <img
               src="./logo.png"
               alt=""
-              width="120"
-              height="56"
-              className="ms-5"
+              width="180"
+              height="60"
+              className="ms-2"
             />
           </Link>
           <button
@@ -45,14 +47,19 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="/">
-                  Contact
+                <Link className="nav-link active" to="/services">
+                  Courses
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link bg-dark rounded px-3 text-white" to="/login">
                   Login
                 </Link>
+              </li>
+              <li className="nav-item">
+                <button onClick={logOut} className="bg-dark rounded p-2 text-white">
+                  log out
+                </button>
               </li>
             </ul>
           </div>
