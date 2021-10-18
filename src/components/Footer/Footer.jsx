@@ -33,7 +33,7 @@ const Footer = () => {
                 <li className="list-group-item bg-dark p-0">
                   <Link
                     className="text-decoration-none text-white"
-                    to="/service"
+                    to="/services"
                   >
                     Courses
                   </Link>
