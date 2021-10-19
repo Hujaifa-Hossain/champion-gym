@@ -2,7 +2,7 @@
 
 https://authentic-assignment.web.app/
 
-## The pros and corns of this site
+## The benifits of this website
 
 * This is the official website of Champion gym
 

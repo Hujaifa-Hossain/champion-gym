@@ -34,7 +34,7 @@ const Login = () => {
             </div>
           </div>
           <div className="col-lg-6">
-            <form onSubmit={handleSignIn} className="p-3 mt-5">
+            <div onSubmit={handleSignIn} className="p-3 mt-5">
               <div className="mb-3 row">
                 <label
                   htmlFor="staticEmail"
@@ -75,7 +75,7 @@ const Login = () => {
                   Log in
                 </button>
               </div>
-            </form>
+            </div>
             <div className="text-center">
               <p>
                 <small>
