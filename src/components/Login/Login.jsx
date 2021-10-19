@@ -1,9 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import useAuth from "../../allHooks/useAuth";
 
 const Login = () => {
-  const { SignInUsingGoogle } = useAuth();
+  const { SignInUsingGoogle, handleSignIn, setUser, setError } = useAuth();
+  const location = useLocation();
+  const history = useHistory();
+  const redirect_uri = location.state?.from || '/home';
+
+  const handleGoogleLogin = () => {
+    SignInUsingGoogle()
+    .then((result) => {
+      history.push(redirect_uri);
+      setUser(result.user);
+    })
+    .catch((error) => {
+      setError(error.message)
+    });
+  };
+
   return (
     <div>
       <div className="container overflow-hidden">
@@ -18,7 +33,7 @@ const Login = () => {
             </div>
           </div>
           <div className="col-lg-6">
-            <div className="p-3 mt-5">
+            <form onClick={handleSignIn} className="p-3 mt-5">
               <div className="mb-3 row">
                 <label
                   htmlFor="staticEmail"
@@ -47,16 +62,17 @@ const Login = () => {
                   <input
                     type="password"
                     className="form-control"
-                    id="inputPassword"
                     placeholder="Enter your password"
-                    required
                   />
                 </div>
-                <button className="w-50 mx-auto my-3 btn btn-dark" type="submit">
+                <button
+                  className="w-50 mx-auto my-3 btn btn-dark"
+                  type="submit"
+                >
                   Log in
                 </button>
               </div>
-            </div>
+            </form>
             <div className="text-center">
               <p>
                 <small>
@@ -64,9 +80,15 @@ const Login = () => {
                   <Link to="/register">create an account</Link>
                 </small>
               </p>
-              <button className="btn btn-dark" onClick={SignInUsingGoogle}>
-                <img src="https://image.flaticon.com/icons/png/512/281/281764.png" width="30px" className="m-1 float-start" alt="" />
-                 Sign in with google</button>
+              <button className="btn btn-dark" onClick={handleGoogleLogin}>
+                <img
+                  src="https://image.flaticon.com/icons/png/512/281/281764.png"
+                  width="30px"
+                  className="m-1 float-start"
+                  alt=""
+                />
+                Sign in with google
+              </button>
             </div>
           </div>
         </div>

@@ -6,6 +6,7 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
 
@@ -29,25 +30,32 @@ const useFirebase = () => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+        setUser(userCredential.user);
         console.log(userCredential.user);
-        setUser(userCredential.user); 
+        setError('')
       })
       .catch((error) => {
-        setError(error.message)
+        setError(error.message);
+      });
+  };
+
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        setUser(userCredential.user);
+        console.log(userCredential.user);
+        setError('')
+      })
+      .catch((error) => {
+        setError(error.message);
       });
   };
 
   const GoogleProvider = new GoogleAuthProvider();
 
   const SignInUsingGoogle = () => {
-    signInWithPopup(auth, GoogleProvider)
-      .then((result) => {
-        console.log(result.user);
-        setUser(result.user);
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
+    return signInWithPopup(auth, GoogleProvider)
   };
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -59,17 +67,20 @@ const useFirebase = () => {
   const logOut = () => {
     signOut(auth)
       .then(() => {
-        setUser()
+        setUser();
       })
       .catch((error) => {
-        setError(error.message)
+        setError(error.message);
       });
   };
   return {
     user,
     error,
+    setUser,
+    setError,
     SignInUsingGoogle,
     handleRegistration,
+    handleSignIn,
     handleEmail,
     handlePassword,
     logOut,

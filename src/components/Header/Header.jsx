@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import useAuth from '../../allHooks/useAuth';
+import React from "react";
+import { Link } from "react-router-dom";
+import useAuth from "../../allHooks/useAuth";
 
 const Header = () => {
-  const {logOut} = useAuth();
+  const { logOut, user } = useAuth();
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light">
@@ -17,6 +17,7 @@ const Header = () => {
               className="ms-2"
             />
           </Link>
+          {user?.name ? <p>{user.name}</p> : ""}
           <button
             className="navbar-toggler"
             type="button"
@@ -29,11 +30,19 @@ const Header = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            
             <ul className="navbar-nav ms-auto me-2 mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/home">
+                <Link
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/home"
+                >
                   Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link active" to="/services">
+                  Courses
                 </Link>
               </li>
               <li className="nav-item">
@@ -46,21 +55,23 @@ const Header = () => {
                   About
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link active" to="/services">
-                  Courses
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link bg-dark rounded px-3 text-white" to="/login">
-                  Login
-                </Link>
-              </li>
-              <li className="nav-item">
-                <button onClick={logOut} className="bg-dark rounded p-2 text-white">
+              {!user?.email ? (
+                <li className="nav-item">
+                  <Link
+                    className="nav-link bg-dark rounded px-3 text-white"
+                    to="/login"
+                  >
+                    Login
+                  </Link>
+                </li>
+              ) : (
+                <button
+                  onClick={logOut}
+                  className="bg-dark rounded p-2 text-white"
+                >
                   log out
                 </button>
-              </li>
+              )}
             </ul>
           </div>
         </div>
