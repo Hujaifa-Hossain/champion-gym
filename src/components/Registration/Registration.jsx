@@ -54,7 +54,7 @@ const Registration = () => {
                     required
                   />
                 </div>
-                <button className="w-50 mx-auto my-3 btn btn-success" type="submit">
+                <button className="w-50 mx-auto my-3 btn btn-info" type="submit">
                   Register
                 </button>
               </div>
@@ -65,7 +65,12 @@ const Registration = () => {
                   <Link to="/login">Log in</Link>
                 </small>
               </p>
-              <button className="btn btn-dark" onClick={SignInUsingGoogle}>Sign up with google</button>
+              <button className="btn btn-dark" onClick={SignInUsingGoogle}><img
+                  src="https://image.flaticon.com/icons/png/512/281/281764.png"
+                  width="30px"
+                  className="m-1 float-start"
+                  alt=""
+                />Sign up with google</button>
             </div>
           </div>
         </div>

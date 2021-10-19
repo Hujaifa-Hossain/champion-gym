@@ -7,6 +7,7 @@ import {
   onAuthStateChanged,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  sendEmailVerification,
   signOut,
 } from "firebase/auth";
 
@@ -32,11 +33,16 @@ const useFirebase = () => {
       .then((userCredential) => {
         setUser(userCredential.user);
         console.log(userCredential.user);
-        setError('')
+        setError("");
+        verifyEmail();
       })
       .catch((error) => {
         setError(error.message);
       });
+  };
+
+  const verifyEmail = () => {
+    sendEmailVerification(auth.currentUser).then(() => {});
   };
 
   const handleSignIn = (e) => {
@@ -45,7 +51,7 @@ const useFirebase = () => {
       .then((userCredential) => {
         setUser(userCredential.user);
         console.log(userCredential.user);
-        setError('')
+        setError("");
       })
       .catch((error) => {
         setError(error.message);
@@ -55,7 +61,7 @@ const useFirebase = () => {
   const GoogleProvider = new GoogleAuthProvider();
 
   const SignInUsingGoogle = () => {
-    return signInWithPopup(auth, GoogleProvider)
+    return signInWithPopup(auth, GoogleProvider);
   };
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
