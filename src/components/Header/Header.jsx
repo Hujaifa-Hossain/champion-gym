@@ -17,7 +17,6 @@ const Header = () => {
               className="ms-2"
             />
           </Link>
-          {user?.name ? <p>{user.name}</p> : ""}
           <button
             className="navbar-toggler"
             type="button"
@@ -55,6 +54,11 @@ const Header = () => {
                   About
                 </Link>
               </li>
+              {user?.displayName ? (
+                <li className="nav-item p-2">{user?.displayName}</li>
+              ) : (
+                <li className="nav-item"></li>
+              )}
               {!user?.email ? (
                 <li className="nav-item">
                   <Link
@@ -65,12 +69,11 @@ const Header = () => {
                   </Link>
                 </li>
               ) : (
-                <button
-                  onClick={logOut}
-                  className="bg-dark rounded p-2 text-white"
-                >
-                  log out
-                </button>
+                <li className="nav-item">
+                  <button onClick={logOut} className="btn btn-dark text-white">
+                    log out
+                  </button>
+                </li>
               )}
             </ul>
           </div>

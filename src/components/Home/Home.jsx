@@ -19,10 +19,10 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div class="container overflow-hidden my-5">
-        <div class="row gx-5">
-          <div class="col-lg-6">
-            <div class="my-5 mx-1">
+      <div className="container overflow-hidden my-5">
+        <div className="row gx-5">
+          <div className="col-lg-6">
+            <div className="my-5 mx-1">
               <h3>OUR PHILOSOPHY</h3>
               <p>
                 as summarised in our philosophy and mission statement we believe
@@ -36,7 +36,7 @@ const Home = () => {
               </Link>
             </div>
           </div>
-          <div class="col-lg-6">
+          <div className="col-lg-6">
             <div>
               <img
                 className="img-fluid rounded"
@@ -50,16 +50,16 @@ const Home = () => {
 
       <AllService></AllService>
 
-      <div class="container overflow-hidden my-5">
+      <div className="container overflow-hidden my-5">
         <h2 className="my-3">What Customar Say</h2>
-        <div class="row gx-5">
-          <div class="col-lg-4">
+        <div className="row gx-5">
+          <div className="col-lg-4">
             <div>
               <img className="img-fluid rounded-circle" src="https://a6e8z9v6.stackpathcdn.com/zyth/gym/wp-content/uploads/sites/2/2021/09/P17.jpg" alt="" />
             </div>
           </div>
-          <div class="col-lg-8">
-            <div class="p-3 bg-light">
+          <div className="col-lg-8">
+            <div className="p-3 bg-light">
               <p>This place is fun and challenging and really convenient as you can go to different classes, rather than having to commit to a specific day and time. The teachers are really friendly and they all have their own style of teaching. 👍 🤩 </p>
               <h6>Hujaifa Hossain</h6>
             </div>

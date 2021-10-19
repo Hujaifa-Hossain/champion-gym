@@ -3,7 +3,7 @@ import { Link, useLocation, useHistory } from "react-router-dom";
 import useAuth from "../../allHooks/useAuth";
 
 const Login = () => {
-  const { SignInUsingGoogle, handleSignIn, setUser, setError } = useAuth();
+  const { SignInUsingGoogle, handleSignIn, setUser, setError, handleEmail, handlePassword } = useAuth();
   const location = useLocation();
   const history = useHistory();
   const redirect_uri = location.state?.from || '/home';
@@ -12,6 +12,7 @@ const Login = () => {
     SignInUsingGoogle()
     .then((result) => {
       history.push(redirect_uri);
+      console.log(result.user)
       setUser(result.user);
     })
     .catch((error) => {
@@ -33,7 +34,7 @@ const Login = () => {
             </div>
           </div>
           <div className="col-lg-6">
-            <form onClick={handleSignIn} className="p-3 mt-5">
+            <form onSubmit={handleSignIn} className="p-3 mt-5">
               <div className="mb-3 row">
                 <label
                   htmlFor="staticEmail"
@@ -43,7 +44,8 @@ const Login = () => {
                 </label>
                 <div className="col-sm-9">
                   <input
-                    type="text"
+                  onBlur={handleEmail}
+                    type="email"
                     className="form-control"
                     id="staticEmail"
                     placeholder="Enter your email"
@@ -60,6 +62,7 @@ const Login = () => {
                 </label>
                 <div className="col-sm-9">
                   <input
+                  onBlur={handlePassword}
                     type="password"
                     className="form-control"
                     placeholder="Enter your password"

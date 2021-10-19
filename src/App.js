@@ -1,16 +1,17 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
 import Login from "./components/Login/Login";
 import NotFound from "./components/NotFound/NotFound";
 import AuthProvider from "./context/AuthProvider";
-import About from './components/About/About';
-import Contact from './components/Contact/Contact';
-import Registration from './components/Registration/Registration';
-import Footer from './components/Footer/Footer';
-import AllService from './components/AllService/AllService';
-import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import About from "./components/About/About";
+import Contact from "./components/Contact/Contact";
+import Registration from "./components/Registration/Registration";
+import Footer from "./components/Footer/Footer";
+import AllService from "./components/AllService/AllService";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import ServiceDetail from "./components/ServiceDetail/ServiceDetail";
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/contact">
               <Contact></Contact>
+            </PrivateRoute>
+            <PrivateRoute path="/service/:serviceId">
+              <ServiceDetail></ServiceDetail>
             </PrivateRoute>
             <Route path="/login">
               <Login></Login>
