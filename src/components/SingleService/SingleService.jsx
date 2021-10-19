@@ -5,7 +5,7 @@ const SingleService = (props) => {
   const {id, name, img, description } = props.service;
   return (
     <div>
-      <div className="card text-white  d-flex justify-content-center align-items-center">
+      <div className="card text-white">
         <img src={img} className="card-img" alt="..." />
         <div className="card-img-overlay">
           <h5 className="card-title">{name}</h5>
