@@ -23,13 +23,13 @@ const Footer = () => {
               </p>
               <p>
               <FontAwesomeIcon icon={faPhone} />
-                <small> Helpline: 01890-098886</small>
+                <small> Helpline: 01890-098886 (7 am t0 10 pm)</small>
               </p>
             </div>
           </div>
           <div className="col-lg-3">
             <div>
-              <ul className="p-0 bg-dark">
+              <ul className="p-0 bg-dark text-center">
                 <li className="list-group-item bg-dark p-0">
                   <Link className="text-decoration-none text-white" to="/home">
                     Home
@@ -57,7 +57,7 @@ const Footer = () => {
                   </Link>
                 </li>
               </ul>
-              <div className="my-3">
+              <div className="my-3 text-center">
               <i class="fab fa-facebook-f mx-1"></i>
               <i class="fab fa-instagram-square mx-1"></i>
               <i class="fab fa-twitter mx-1"></i>
@@ -66,7 +66,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="col-lg-4">
-            <div>
+            <div className="text-center">
               <img
                 src="https://onlineshoppingbd.org/wp-content/uploads/2016/12/payment.png"
                 alt=""
