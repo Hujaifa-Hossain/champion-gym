@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -10,7 +11,10 @@ const About = () => {
         </div>
       </div>
       <div className="container my-4 row">
-        <h2 className="col-lg-5 my-3">We Help Enhance Your Workout</h2>
+        <div className="col-lg-5 my-5">
+          <h3>We Help Enhance Your Workout</h3>
+          <Link to="/services"><button className="btn btn-dark">See Our All Courses</button></Link>
+        </div>
         <div className="col-lg-7">
           <p>
             As a multi-faceted fitness and health company which is encompassed
@@ -21,7 +25,7 @@ const About = () => {
           <p>
             It is these values which every new client will see come to life when
             their training journey begins, as they drive us as trainers each day
-            to achieve the positive results that everyone we work with desires.
+            to achieve the positive results that everyone we work with desires. 💪
           </p>
         </div>
       </div>

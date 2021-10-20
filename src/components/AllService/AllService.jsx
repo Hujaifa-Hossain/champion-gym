@@ -10,7 +10,7 @@ const AllService = () => {
       .then(data => setServices(data))
   }, [])
   return (
-    <div>
+    <div className="bg-dark text-white py-3">
       <h3 className="text-center my-3">Our All Courses</h3>
       <div className="service-container container">
         {

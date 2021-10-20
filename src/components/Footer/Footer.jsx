@@ -1,10 +1,12 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <div>
-      <div className="px-4 pt-5 pb-2 bg-dark text-white mt-5">
+      <div className="px-4 pt-5 pb-2 bg-dark text-white">
         <div className="row gx-5">
           <div className="col-lg-5">
             <div className="bg-light">
@@ -12,13 +14,16 @@ const Footer = () => {
             </div>
             <div className="my-2">
               <p>
-                <small>Level-10, Ka-218, Zakir Complex, Kuril, Dhaka</small>
+              <i class="fas fa-map-marker-alt"></i>
+                <small> Level-10, Zakir Complex, Kuril, Dhaka</small>
               </p>
               <p>
-                <small>Official: champgym2@gmail.com</small>
+              <i class="fas fa-envelope"></i> 
+                <small> Official: champgym2@gmail.com</small>
               </p>
               <p>
-                <small>Helpline: 01890-098886 (07:00am to 10:00pm)</small>
+              <FontAwesomeIcon icon={faPhone} />
+                <small> Helpline: 01890-098886</small>
               </p>
             </div>
           </div>
@@ -52,6 +57,12 @@ const Footer = () => {
                   </Link>
                 </li>
               </ul>
+              <div className="my-3">
+              <i class="fab fa-facebook-f mx-1"></i>
+              <i class="fab fa-instagram-square mx-1"></i>
+              <i class="fab fa-twitter mx-1"></i>
+              <i class="fab fa-youtube mx-1"></i>
+              </div>
             </div>
           </div>
           <div className="col-lg-4">

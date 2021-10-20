@@ -22,7 +22,7 @@ const Login = () => {
 
   return (
     <div>
-      <div className="container overflow-hidden">
+      <div className="container overflow-hidden my-3">
         <div className="row gx-4">
           <div className="col-lg-6">
             <div>

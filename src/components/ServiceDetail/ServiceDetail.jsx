@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDollarSign } from '@fortawesome/free-solid-svg-icons'
+
 import { useParams } from "react-router";
 
 const ServiceDetail = () => {
@@ -15,7 +18,7 @@ const ServiceDetail = () => {
   const serviceDetials = details?.find((service) => service.id === serviceId);
 
   return (
-    <div className="text-center w-50 mx-auto">
+    <div className="text-center w-50 mx-auto my-3">
       <div className="card">
         <img src={serviceDetials?.img} className="card-img-top" alt="..." />
         <div className="card-body">
@@ -23,7 +26,7 @@ const ServiceDetail = () => {
           <p className="card-text">
             {serviceDetials?.description}
           </p>
-          <p>Subscription ${serviceDetials?.price}/ month</p>
+          <p><FontAwesomeIcon icon={faDollarSign} />ubscription ${serviceDetials?.price}/ month</p>
         </div>
       </div>
     </div>

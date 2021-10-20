@@ -17,10 +17,10 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="overflow-hidden bg-dark">
-        <div className="p-4 row gx-5">
+      <div className="overflow-hidden">
+        <div className="p-4 row g-4">
           <div className="col-lg-4">
-            <div className="text-center text-white">
+            <div className="text-center text-white rounded bg-dark p-2">
               <img
                 className="img-fluid rounded-circle w-25"
                 src="https://image.freepik.com/free-icon/auricular-phone_318-1028.jpg"
@@ -34,7 +34,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="col-lg-4">
-            <div className="text-center text-white">
+            <div className="text-center text-white rounded bg-dark p-2">
               <img
                 className="img-fluid rounded-circle w-25"
                 src="https://image.freepik.com/free-icon/sent-email_318-10100.jpg"
@@ -48,7 +48,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="col-lg-4">
-            <div className="text-center text-white">
+            <div className="text-center text-white rounded bg-dark p-2">
               <img
                 className="img-fluid rounded-circle w-25 bg-light"
                 src="https://image.flaticon.com/icons/png/512/1244/1244940.png"
@@ -86,7 +86,7 @@ const Contact = () => {
           placeholder="Enter your email"
         />
         <textarea className="form-control" placeholder="Message" rows="3"></textarea>
-        <button className="btn btn-dark my-1">Submit</button>
+        <button className="btn btn-dark my-2">Submit Your Info</button>
       </div>
     </div>
   );
